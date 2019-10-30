@@ -3,10 +3,13 @@ describe('Contact Test', function() {
     cy.visit('http://localhost:8000/')
     cy.get('[data-cy=contact-list]').children().should('have.length', 3)
   })
-  it('Contact image should visible', function() {
+  it('Contact image should has correct telephone number link and has image', function() {
     cy.visit('http://localhost:8000/')
-    cy.get('[data-cy=contact-list] > :nth-child(1)').find('img').should('be.visible')
-    cy.get('[data-cy=contact-list] > :nth-child(2)').find('img').should('be.visible')
-    cy.get('[data-cy=contact-list] > :nth-child(3)').find('img').should('be.visible')
+    cy.get('[data-cy=contact-list] > :nth-child(1)').find('img').should('have.attr', 'alt', 'กรุงไทย')
+    cy.get('[data-cy=contact-list] > :nth-child(1) > a').should('have.attr', 'href', 'tel:021111144')
+    cy.get('[data-cy=contact-list] > :nth-child(2)').find('img').should('have.attr', 'alt', 'กรมบัญชีกลาง')
+    cy.get('[data-cy=contact-list] > :nth-child(2) > a').should('have.attr', 'href', 'tel:022706400')
+    cy.get('[data-cy=contact-list] > :nth-child(3)').find('img').should('have.attr', 'alt', 'การท่องเที่ยวแห่งประเทศไทย')
+    cy.get('[data-cy=contact-list] > :nth-child(3) > a').should('have.attr', 'href', 'tel:1672')
   })
 })
