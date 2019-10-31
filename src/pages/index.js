@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Information from '../components/Information'
 import Contact from '../components/Contact'
+import Partner from '../components/Partner'
 
 
 const IndexPage = () => (
@@ -17,6 +18,7 @@ const IndexPage = () => (
       <Hero />
       <Information />
       <Contact />
+      <Partner />
     </Container>
   </Fragment>
 )
