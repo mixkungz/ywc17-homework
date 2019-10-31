@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Information from '../components/Information'
+import Contact from '../components/Contact'
 
 
 const IndexPage = () => (
@@ -15,6 +16,7 @@ const IndexPage = () => (
     <Container fluid>
       <Hero />
       <Information />
+      <Contact />
     </Container>
   </Fragment>
 )
