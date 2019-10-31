@@ -2,7 +2,7 @@ import React from 'react'
 
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Container as UnStyleContainer, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 
 const ContactImage = styled.img`
   width: 80%;
@@ -10,9 +10,10 @@ const ContactImage = styled.img`
     width: 100%;
   }
 `
-const Container = styled(UnStyleContainer)`
-  margin-top: 120px;
+const ContactContainer = styled.section`
+  margin: 100px 0;
 `
+
 const Contact = () =>  {
   const image = useStaticQuery(graphql`
     query ContactQuery {
@@ -40,19 +41,21 @@ const Contact = () =>  {
     }
   `)
   return (
-    <Container>
-      <Row data-cy='contact-list'>
-        <Col xs={12} md={4} className='text-center'>
-          <a href='tel:021111144'><ContactImage src={image.CDG.childImageSharp.fluid.src} alt='กรุงไทย' /></a>
-        </Col>
-        <Col xs={12} md={4} className='text-center'>
-          <a href='tel:022706400'><ContactImage src={image.KTB.childImageSharp.fluid.src} alt='กรมบัญชีกลาง' /></a>
-        </Col>
-        <Col xs={12} md={4} className='text-center'>
-          <a href='tel:1672'><ContactImage src={image.TAT.childImageSharp.fluid.src} alt='การท่องเที่ยวแห่งประเทศไทย' /></a>
-        </Col>
-      </Row>
-    </Container>
+    <ContactContainer>
+      <Container>
+        <Row data-cy='contact-list'>
+          <Col xs={12} md={4} className='text-center'>
+            <a href='tel:021111144'><ContactImage src={image.CDG.childImageSharp.fluid.src} alt='กรุงไทย' /></a>
+          </Col>
+          <Col xs={12} md={4} className='text-center'>
+            <a href='tel:022706400'><ContactImage src={image.KTB.childImageSharp.fluid.src} alt='กรมบัญชีกลาง' /></a>
+          </Col>
+          <Col xs={12} md={4} className='text-center'>
+            <a href='tel:1672'><ContactImage src={image.TAT.childImageSharp.fluid.src} alt='การท่องเที่ยวแห่งประเทศไทย' /></a>
+          </Col>
+        </Row>
+      </Container>
+    </ContactContainer>
   )
 }
 
