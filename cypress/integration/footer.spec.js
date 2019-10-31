@@ -1,9 +1,9 @@
 describe('Footer Test', function() {
-  it('How to personal register should has telephone link to ktb callcenter', function() {
+  it('Registration personal group information should has telephone link to ktb callcenter', function() {
     cy.visit('http://localhost:8000/')
     cy.get('[data-cy=ktb-phonenumber]').should('have.attr', 'href', 'tel:021111144')
   })
-  it('How to corperate register should has telephone link to CGD callcenter', function() {
+  it('Registration corperate group information should has telephone link to CGD callcenter', function() {
     cy.visit('http://localhost:8000/')
     cy.get('[data-cy=cgd-phonenumber]').should('have.attr', 'href', 'tel:022706400')
   })
