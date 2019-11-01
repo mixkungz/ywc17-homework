@@ -6,8 +6,8 @@ export const Line = () => (
   <ContentLoader
     height={60}
     width={400}
-    speed={2}
-    primaryColor="#f3f3f3"
+    speed={4}
+    primaryColor="#d9d9d9"
     secondaryColor="#ecebeb"
   >
     <rect x="100" y="20" rx="3" ry="3" width="200" height="6" /> 
@@ -18,8 +18,8 @@ export const MultipleLine = () => (
   <ContentLoader 
     height={80}
     width={400}
-    speed={2}
-    primaryColor="#f3f3f3"
+    speed={4}
+    primaryColor="#d9d9d9"
     secondaryColor="#ecebeb"
   >
     <rect x="0" y="0" rx="3" ry="3" width="180" height="6" /> 
@@ -34,8 +34,8 @@ export const BulletList = () => (
   <ContentLoader 
     height={110}
     width={400}
-    speed={1}
-    primaryColor="#ecebeb"
+    speed={4}
+    primaryColor="#d9d9d9"
     secondaryColor="#ecebeb"
   >
     <rect x="60" y="18" rx="3" ry="3" width="180" height="6" /> 

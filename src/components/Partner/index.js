@@ -75,32 +75,32 @@ const Partner = () => {
       <Row data-cy='partner-list'>
         <Col xs={4} md={2} className='text-center'>
           <a href='https://www.mof.go.th/th/home' target='_blank' rel='noopener noreferrer'>
-            <Image src={image.MOF.childImageSharp.fluid.src} alt='กระทรวงการคลัง' />
+            <Image src={image.MOF.childImageSharp.fluid.srcWebp} alt='กระทรวงการคลัง' />
           </a>
         </Col>
         <Col xs={4} md={2} className='text-center'>
           <a href='http://www.fpo.go.th/main' target='_blank' rel='noopener noreferrer'>
-            <Image src={image.FPO.childImageSharp.fluid.src} alt='สำนักงานเศรษฐกิจ กระทรวงการคลัง' />
+            <Image src={image.FPO.childImageSharp.fluid.srcWebp} alt='สำนักงานเศรษฐกิจ กระทรวงการคลัง' />
           </a>
         </Col>
         <Col xs={4} md={2} className='text-center'>
           <a href='https://www.cgd.go.th/' target='_blank' rel='noopener noreferrer'>
-            <Image src={image.CGD.childImageSharp.fluid.src} alt='กรมบัญชีกลาง' />
+            <Image src={image.CGD.childImageSharp.fluid.srcWebp} alt='กรมบัญชีกลาง' />
           </a>
         </Col>
         <Col xs={4} md={2} className='text-center'>
           <a href='https://www.ktb.co.th/th/personal' target='_blank' rel='noopener noreferrer'>
-            <Image src={image.KTB.childImageSharp.fluid.src} alt='ธนาคารกรุงไทย' />
+            <Image src={image.KTB.childImageSharp.fluid.srcWebp} alt='ธนาคารกรุงไทย' />
           </a>
         </Col>
         <Col xs={4} md={2} className='text-center'>
           <a href='https://www.mots.go.th/' target='_blank' rel='noopener noreferrer'>
-            <Image src={image.MOTS.childImageSharp.fluid.src} alt='กระทรวงการท่องเที่ยวและกีฬา' />
+            <Image src={image.MOTS.childImageSharp.fluid.srcWebp} alt='กระทรวงการท่องเที่ยวและกีฬา' />
           </a>
         </Col>
         <Col xs={4} md={2} className='text-center'>
           <a href='https://landing.tourismthailand.org/' target='_blank' rel='noopener noreferrer'>
-            <Image src={image.TAT.childImageSharp.fluid.src} alt='กระทรวงการท่องเที่ยวแห่งประเทศไทย' />
+            <Image src={image.TAT.childImageSharp.fluid.srcWebp} alt='กระทรวงการท่องเที่ยวแห่งประเทศไทย' />
           </a>
         </Col>
       </Row>

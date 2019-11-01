@@ -61,7 +61,7 @@ const Footer = () => {
         <Container>
           <Row>
             <Col xs={12} sm={12} md={3} className='d-md-flex align-items-md-center'>
-              <Logo src={image.logo.childImageSharp.fluid.src} />
+              <Logo src={image.logo.childImageSharp.fluid.srcWebp} />
             </Col>
             <Col xs={12} sm={4} md={3}>
               <Title>ข้อมูลลงทะเบียนประชาชน</Title>

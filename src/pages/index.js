@@ -2,6 +2,7 @@ import React, { Fragment } from "react"
 
 import useSWR from 'swr'
 import { Container } from 'react-bootstrap'
+import { LazyLoadComponent } from 'react-lazy-load-image-component'
 
 import SEO from "../components/seo"
 import Navbar from '../components/Navbar'
@@ -24,10 +25,14 @@ const IndexPage = () => {
       <Container fluid>
         <Hero />
         <Information data={data} />
-        <Contact />
-        <Partner />
+        <LazyLoadComponent threshold={400}>
+          <Contact />
+          <Partner />
+        </LazyLoadComponent>
       </Container>
-      <Footer />
+      <LazyLoadComponent threshold={500}>
+        <Footer />
+      </LazyLoadComponent>
     </Fragment>
   )
 }

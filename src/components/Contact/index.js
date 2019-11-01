@@ -45,13 +45,13 @@ const Contact = () =>  {
       <Container>
         <Row data-cy='contact-list'>
           <Col xs={12} md={4} className='text-center'>
-            <a href='tel:021111144'><ContactImage src={image.CDG.childImageSharp.fluid.src} alt='กรุงไทย' /></a>
+            <a href='tel:021111144'><ContactImage src={image.CDG.childImageSharp.fluid.srcWebp} alt='กรุงไทย' /></a>
           </Col>
           <Col xs={12} md={4} className='text-center'>
-            <a href='tel:022706400'><ContactImage src={image.KTB.childImageSharp.fluid.src} alt='กรมบัญชีกลาง' /></a>
+            <a href='tel:022706400'><ContactImage src={image.KTB.childImageSharp.fluid.srcWebp} alt='กรมบัญชีกลาง' /></a>
           </Col>
           <Col xs={12} md={4} className='text-center'>
-            <a href='tel:1672'><ContactImage src={image.TAT.childImageSharp.fluid.src} alt='การท่องเที่ยวแห่งประเทศไทย' /></a>
+            <a href='tel:1672'><ContactImage src={image.TAT.childImageSharp.fluid.srcWebp} alt='การท่องเที่ยวแห่งประเทศไทย' /></a>
           </Col>
         </Row>
       </Container>
