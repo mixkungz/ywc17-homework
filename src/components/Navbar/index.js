@@ -12,9 +12,32 @@ const Logo = styled.img`
 const NavLink = styled(Nav.Link)`
   color: #333 !important;
   font-family: 'TATSanaChon';
+  font-weight: bold;
   font-size: 14px;
   padding-left: 15px;
   padding-right: 15px;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    left: 0;
+    bottom: -8px;
+    background-color: #213A8F;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  &:hover {
+    color: #213A8F !important;
+    &:after {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+  }
 `
 const Navbar = styled(UnStyleNavbar)`
   height: 60px;
