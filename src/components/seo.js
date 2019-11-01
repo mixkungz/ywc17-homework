@@ -18,7 +18,6 @@ function SEO({ description, lang, meta, title }) {
           siteMetadata {
             title
             description
-            author
           }
         }
       }
@@ -36,8 +35,16 @@ function SEO({ description, lang, meta, title }) {
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
+          name: `title`,
+          content: title,
+        },
+        {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          name: `image`,
+          content: `https://mixkungz.github.io/ywc17-homework/images/Share_Social.png`,
         },
         {
           property: `og:title`,
@@ -48,24 +55,16 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
-          property: `og:type`,
+          property: `og:image`,
+          content: `https://mixkungz.github.io/ywc17-homework/images/Share_Social.png`,
+        },
+        {
+          property: `type`,
           content: `website`,
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
+          property: `url`,
+          content: `https://mixkungz.github.io/ywc17-homework/`,
         },
       ].concat(meta)}
     />

@@ -15,10 +15,10 @@ import fetch from '../libs/fetch'
 
 
 const IndexPage = () => {
-  const { data, error } = useSWR('https://panjs.com/ywc.json', fetch)
+  const { data } = useSWR('https://panjs.com/ywc.json', fetch)
   return (
     <Fragment>
-      <SEO title="Home" />
+      <SEO title='มาตรการส่งเสริมการท่องเที่ยวในประเทศ “ชิมช้อปใช้”' />
       <GlobalStyle />
       <Navbar data={data} />
       <Container fluid>
