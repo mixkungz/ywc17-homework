@@ -74,32 +74,32 @@ const Partner = () => {
     <Container>
       <Row data-cy='partner-list'>
         <Col xs={4} md={2} className='text-center'>
-          <a href='https://www.mof.go.th/th/home' target='_blank'>
+          <a href='https://www.mof.go.th/th/home' target='_blank' rel='noopener noreferrer'>
             <Image src={image.MOF.childImageSharp.fluid.src} alt='กระทรวงการคลัง' />
           </a>
         </Col>
         <Col xs={4} md={2} className='text-center'>
-          <a href='http://www.fpo.go.th/main' target='_blank'>
+          <a href='http://www.fpo.go.th/main' target='_blank' rel='noopener noreferrer'>
             <Image src={image.FPO.childImageSharp.fluid.src} alt='สำนักงานเศรษฐกิจ กระทรวงการคลัง' />
           </a>
         </Col>
         <Col xs={4} md={2} className='text-center'>
-          <a href='https://www.cgd.go.th/' target='_blank'>
+          <a href='https://www.cgd.go.th/' target='_blank' rel='noopener noreferrer'>
             <Image src={image.CGD.childImageSharp.fluid.src} alt='กรมบัญชีกลาง' />
           </a>
         </Col>
         <Col xs={4} md={2} className='text-center'>
-          <a href='https://www.ktb.co.th/th/personal' target='_blank'>
+          <a href='https://www.ktb.co.th/th/personal' target='_blank' rel='noopener noreferrer'>
             <Image src={image.KTB.childImageSharp.fluid.src} alt='ธนาคารกรุงไทย' />
           </a>
         </Col>
         <Col xs={4} md={2} className='text-center'>
-          <a href='https://www.mots.go.th/' target='_blank'>
+          <a href='https://www.mots.go.th/' target='_blank' rel='noopener noreferrer'>
             <Image src={image.MOTS.childImageSharp.fluid.src} alt='กระทรวงการท่องเที่ยวและกีฬา' />
           </a>
         </Col>
         <Col xs={4} md={2} className='text-center'>
-          <a href='https://landing.tourismthailand.org/' target='_blank'>
+          <a href='https://landing.tourismthailand.org/' target='_blank' rel='noopener noreferrer'>
             <Image src={image.TAT.childImageSharp.fluid.src} alt='กระทรวงการท่องเที่ยวแห่งประเทศไทย' />
           </a>
         </Col>

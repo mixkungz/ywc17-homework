@@ -79,7 +79,7 @@ const Information = () => (
       <Row className='text-center'>
         <Col xs={12}>ตั้งแต่วันที่<br/> <Duration data-cy='duration'>27 ก.ย. - 31 ธ.ค. 62</Duration></Col>
         <Col xs={12} md={{span: 10, offset: 1}}>
-          <a href='https://regist.ชิมช้อปใช้.com/Register/' target='_blank'>
+          <a href='https://regist.ชิมช้อปใช้.com/Register/' target='_blank' rel='noopener noreferrer'>
             <RegisterButton>
               ลงทะเบียน เฟส 2<br/>
               ตั้งแต่วันที่ 24 ต.ค. 62 วันละ 2 รอบ เวลา 6.00 และ 18.00 น.<br/>
