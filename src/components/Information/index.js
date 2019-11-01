@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 
 const InformationContainer = styled.section`
+  font-family: 'TATSanaChon';
+  font-weight: bold;
   padding-top: 26px;
 `
 const Duration = styled.p`
@@ -25,10 +27,16 @@ const RegisterButton = styled(Button)`
   background-color: #213A8F;
   border-radius: 5px;
   border: none;
+  font-size: 18px;
+  font-weight: bold;
   
   &:hover {
     background-color: #FBBC33;
     box-shadow: none;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 24px;
   }
 `
 const Campaign = styled.h2`
@@ -37,16 +45,39 @@ const Campaign = styled.h2`
   color: red;
   text-align: left;
   margin-top: 70px;
+  font-weight: bold;
+
+  @media (min-width: 768px) {
+    font-size: 36px;
+  }
+`
+const Detail = styled.p`
+  text-align: left;
+  font-size: 16px;
+  font-family: 'TATSanaSuksa';
+  font-weight: normal;
+  
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+`
+
+const CampaignDetail = styled(Detail)`
+`
+
+const TermTitle = styled(Detail)`
+  font-family: 'TATSanaChon';
+  font-weight: bold;
+`
+
+const TermDetail = styled(Detail)`
 `
 
 const Information = () => (
   <InformationContainer>
     <Container>
       <Row className='text-center'>
-        <Col xs={12}>ตั้งแต่วันที่</Col>
-        <Col xs={12}>
-          <Duration data-cy='duration'>27 ก.ย. - 31 ธ.ค. 62</Duration>
-        </Col>
+        <Col xs={12}>ตั้งแต่วันที่<br/> <Duration data-cy='duration'>27 ก.ย. - 31 ธ.ค. 62</Duration></Col>
         <Col xs={12} md={{span: 10, offset: 1}}>
           <RegisterButton>
             ลงทะเบียน เฟส 2<br/>
@@ -59,6 +90,9 @@ const Information = () => (
             มาตรการส่งเสริมการบริโภค<br />
             ในประเทศ "ชิมช้อปใช้"
           </Campaign>
+          <CampaignDetail></CampaignDetail>
+          <TermTitle>เงื่อนไขการเข้าร่วมมาตรการ</TermTitle>
+          <TermDetail></TermDetail>
         </Col>
       </Row>
     </Container>
