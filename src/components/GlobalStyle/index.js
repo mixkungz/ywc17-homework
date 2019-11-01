@@ -1,6 +1,30 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'TATSanaSuksa';
+    src: url(${require('../../static/fonts/TATSanaSuksa-Regular.woff2')}) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'TATSanaChon';
+    src: url(${require('../../static/fonts/TATSanaChon-Bold.woff2')}) format('woff2');
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'TATSanaChon';
+    src: url(${require('../../static/fonts/TATSanaChon-Regular.woff2')}) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body {
+    font-family: 'TATSanaSuksa', sans-serif;
+    color: #333;
+  }
+
   a {
     &:hover {
       text-decoration: none;
