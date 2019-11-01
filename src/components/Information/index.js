@@ -2,6 +2,7 @@ import React from 'react'
 
 import styled from 'styled-components'
 import { Container, Row, Col, Button } from 'react-bootstrap'
+import { Line, MultipleLine, BulletList } from '../Loader'
 
 const InformationContainer = styled.section`
   font-family: 'TATSanaChon';
@@ -73,11 +74,15 @@ const TermTitle = styled(Detail)`
 const TermDetail = styled(Detail)`
 `
 
-const Information = () => (
+const Information = props => (
   <InformationContainer>
     <Container>
       <Row className='text-center'>
-        <Col xs={12}>ตั้งแต่วันที่<br/> <Duration data-cy='duration'>27 ก.ย. - 31 ธ.ค. 62</Duration></Col>
+        <Col xs={12}>ตั้งแต่วันที่<br/>
+          {
+            !props.data ? <Line /> : <Duration data-cy='duration'>{props.data.duration}</Duration>
+          }
+        </Col>
         <Col xs={12} md={{span: 10, offset: 1}}>
           <a href='https://regist.ชิมช้อปใช้.com/Register/' target='_blank' rel='noopener noreferrer'>
             <RegisterButton>
@@ -92,9 +97,13 @@ const Information = () => (
             มาตรการส่งเสริมการบริโภค<br />
             ในประเทศ "ชิมช้อปใช้"
           </Campaign>
-          <CampaignDetail></CampaignDetail>
+          {
+            !props.data ? <MultipleLine /> : <CampaignDetail dangerouslySetInnerHTML={{ __html: props.data.detail}} />
+          }
           <TermTitle>เงื่อนไขการเข้าร่วมมาตรการ</TermTitle>
-          <TermDetail></TermDetail>
+          {
+            !props.data ? <BulletList /> : <TermDetail dangerouslySetInnerHTML={{ __html: props.data.condition}} />
+          }
         </Col>
       </Row>
     </Container>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 
 import styled from 'styled-components'
 import { Navbar as UnStyleNavbar, Nav } from 'react-bootstrap'
@@ -40,10 +40,14 @@ const NavLink = styled(Nav.Link)`
   }
 `
 const Navbar = styled(UnStyleNavbar)`
-  height: 60px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+
+  @media (min-width: 768px) {
+    height: 60px;
+  }
+
 `
-const WebNavbar = () => {
+const WebNavbar = props => {
   const image = useStaticQuery(graphql`
     query NavbarQuery {
       logo: file(relativePath: { eq: "logo-transparent.png" }) {
@@ -55,22 +59,24 @@ const WebNavbar = () => {
       }
     }
   `)
+  const isHavingData = props.data
+  const renderNav = useCallback(() => props.data.navbarItems.map(nav => <NavLink key={nav.label} href={nav.href}>{nav.label}</NavLink>))
   return (
     <Navbar bg="light" expand="md" fixed='top'>
       <Navbar.Brand href="#home" className='d-md-none py-0'>
         <Logo src={image.logo.childImageSharp.fluid.src} alt='ชิม-ช้อป-ใช้ โลโก้' />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="sr-only">Toggle navigation</span>
+        <span className="icon-bar"></span>
+        <span className="icon-bar"></span>
+        <span className="icon-bar"></span>
+        <span className="sr-only">Toggle navigation</span>
       </Navbar.Toggle>
       <Navbar.Collapse id="navbar-collapse">
         <Nav className="text-right text-md-center mx-md-auto" data-cy='menu'>
-          <NavLink href="https://regist.ชิมช้อปใช้.com/Register/">ลงทะเบียนเข้าร่วมมาตรการ</NavLink>
-          <NavLink href="https://www2.ชิมช้อปใช้.com/howto-register">ขั้นตอนการเข้าร่วม</NavLink>
-          <NavLink href="https://www2.ชิมช้อปใช้.com/thung-ngern-shop-province">ร้านค้าที่เข้าร่วม</NavLink>
+          {
+            isHavingData && renderNav()
+          }
         </Nav>
       </Navbar.Collapse>
     </Navbar>
