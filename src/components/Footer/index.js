@@ -33,7 +33,15 @@ const NoWrap = styled.span`
   white-space: nowrap;
 `
 const Detail = styled.p`
+  font-family: 'TATSanaChon';
+  font-weight: bold;
+  font-size: 12px;
+  padding-left: 15px;
 
+  @media (min-width: 768px) {
+    font-size: 14px;
+    padding-left: 0;
+  }
 `
 const Footer = () => {
   const image = useStaticQuery(graphql`
@@ -52,7 +60,7 @@ const Footer = () => {
       <FooterContactContainer>
         <Container>
           <Row>
-            <Col xs={12} sm={12} md={3}>
+            <Col xs={12} sm={12} md={3} className='d-md-flex align-items-md-center'>
               <Logo src={image.logo.childImageSharp.fluid.src} />
             </Col>
             <Col xs={12} sm={4} md={3}>
