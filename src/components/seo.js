@@ -17,7 +17,9 @@ function SEO({ description, lang, meta, title }) {
         site {
           siteMetadata {
             title
-            description
+            description,
+            url,
+            image
           }
         }
       }
@@ -44,7 +46,15 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `image`,
-          content: `https://mixkungz.github.io/ywc17-homework/images/Share_Social.png`,
+          content: `${site.siteMetadata.url}${site.siteMetadata.image}`,
+        },
+        {
+          property: `type`,
+          content: `website`,
+        },
+        {
+          property: `url`,
+          content: `https://mixkungz.github.io/ywc17-homework/`,
         },
         {
           property: `og:title`,
@@ -56,14 +66,14 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: `https://mixkungz.github.io/ywc17-homework/images/Share_Social.png`,
+          content:  `${site.siteMetadata.url}${site.siteMetadata.image}`,
         },
         {
-          property: `type`,
+          property: `og:type`,
           content: `website`,
         },
         {
-          property: `url`,
+          property: `og:url`,
           content: `https://mixkungz.github.io/ywc17-homework/`,
         },
       ].concat(meta)}

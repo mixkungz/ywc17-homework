@@ -3,6 +3,8 @@ module.exports = {
   siteMetadata: {
     title: `มาตรการส่งเสริมการท่องเที่ยวในประเทศ “ชิมช้อปใช้”`,
     description: `ผู้สนใจเข้าร่วมมาตรการฯ สามารถลงทะเบียน ตั้งแต่ วันที่ 23 ก.ย. - 15 พ.ย. 62`,
+    url: 'https://mixkungz.github.io/ywc17-homework',
+    image: '/images/Share_Social.jpg'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -15,7 +17,14 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        useMozJpeg: false,
+        stripMetadata: true,
+        defaultQuality: 75,
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
