@@ -1,13 +1,24 @@
 import React from 'react'
 
 import styled from 'styled-components'
-import { Navbar, Nav } from 'react-bootstrap'
+import { Navbar as UnStyleNavbar, Nav } from 'react-bootstrap'
 import { useStaticQuery, graphql } from 'gatsby'
 
 const Logo = styled.img`
   width: 100%;
   height: 100%;
   max-width: 38px;
+`
+const NavLink = styled(Nav.Link)`
+  color: #333 !important;
+  font-family: 'TATSanaChon';
+  font-size: 14px;
+  padding-left: 15px;
+  padding-right: 15px;
+`
+const Navbar = styled(UnStyleNavbar)`
+  height: 60px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
 `
 const WebNavbar = () => {
   const image = useStaticQuery(graphql`
@@ -23,7 +34,7 @@ const WebNavbar = () => {
   `)
   return (
     <Navbar bg="light" expand="md" fixed='top'>
-      <Navbar.Brand href="#home" className='d-md-none'>
+      <Navbar.Brand href="#home" className='d-md-none py-0'>
         <Logo src={image.logo.childImageSharp.fluid.src} alt='ชิม-ช้อป-ใช้ โลโก้' />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbar-collapse">
@@ -34,9 +45,9 @@ const WebNavbar = () => {
       </Navbar.Toggle>
       <Navbar.Collapse id="navbar-collapse">
         <Nav className="text-right text-md-center mx-md-auto" data-cy='menu'>
-          <Nav.Link href="https://regist.ชิมช้อปใช้.com/Register/">ลงทะเบียนเข้าร่วมมาตรการ</Nav.Link>
-          <Nav.Link href="https://www2.ชิมช้อปใช้.com/howto-register">ขั้นตอนการเข้าร่วม</Nav.Link>
-          <Nav.Link href="https://www2.ชิมช้อปใช้.com/thung-ngern-shop-province">ร้านค้าที่เข้าร่วม</Nav.Link>
+          <NavLink href="https://regist.ชิมช้อปใช้.com/Register/">ลงทะเบียนเข้าร่วมมาตรการ</NavLink>
+          <NavLink href="https://www2.ชิมช้อปใช้.com/howto-register">ขั้นตอนการเข้าร่วม</NavLink>
+          <NavLink href="https://www2.ชิมช้อปใช้.com/thung-ngern-shop-province">ร้านค้าที่เข้าร่วม</NavLink>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
