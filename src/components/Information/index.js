@@ -74,40 +74,43 @@ const TermTitle = styled(Detail)`
 const TermDetail = styled(Detail)`
 `
 
-const Information = props => (
-  <InformationContainer>
-    <Container>
-      <Row className='text-center'>
-        <Col xs={12}>ตั้งแต่วันที่<br/>
-          {
-            !props.data ? <Line /> : <Duration data-cy='duration'>{props.data.duration}</Duration>
-          }
-        </Col>
-        <Col xs={12} md={{span: 10, offset: 1}}>
-          <a href='https://regist.ชิมช้อปใช้.com/Register/' target='_blank' rel='noopener noreferrer'>
-            <RegisterButton>
-              ลงทะเบียน เฟส 2<br/>
-              ตั้งแต่วันที่ 24 ต.ค. 62 วันละ 2 รอบ เวลา 6.00 และ 18.00 น.<br/>
-              (จำกัดจำนวนผู้ลงทะเบียนรอบละ 5 แสนคน รวม 1 ล้านคนต่อวัน)
-            </RegisterButton>
-          </a>
-        </Col>
-        <Col xs={12}>
-          <Campaign>
-            มาตรการส่งเสริมการบริโภค<br />
-            ในประเทศ "ชิมช้อปใช้"
-          </Campaign>
-          {
-            !props.data ? <MultipleLine /> : <CampaignDetail dangerouslySetInnerHTML={{ __html: props.data.detail}} />
-          }
-          <TermTitle>เงื่อนไขการเข้าร่วมมาตรการ</TermTitle>
-          {
-            !props.data ? <BulletList /> : <TermDetail dangerouslySetInnerHTML={{ __html: props.data.condition}} />
-          }
-        </Col>
-      </Row>
-    </Container>
-  </InformationContainer>
-)
+const Information = props => {
+  const isLoading = !props.data
+  return (
+    <InformationContainer>
+      <Container>
+        <Row className='text-center'>
+          <Col xs={12}>ตั้งแต่วันที่<br/>
+            {
+              isLoading ? <Line /> : <Duration data-cy='duration'>{props.data.duration}</Duration>
+            }
+          </Col>
+          <Col xs={12} md={{span: 10, offset: 1}}>
+            <a href='https://regist.ชิมช้อปใช้.com/Register/' target='_blank' rel='noopener noreferrer'>
+              <RegisterButton>
+                ลงทะเบียน เฟส 2<br/>
+                ตั้งแต่วันที่ 24 ต.ค. 62 วันละ 2 รอบ เวลา 6.00 และ 18.00 น.<br/>
+                (จำกัดจำนวนผู้ลงทะเบียนรอบละ 5 แสนคน รวม 1 ล้านคนต่อวัน)
+              </RegisterButton>
+            </a>
+          </Col>
+          <Col xs={12}>
+            <Campaign>
+              มาตรการส่งเสริมการบริโภค<br />
+              ในประเทศ "ชิมช้อปใช้"
+            </Campaign>
+            {
+              isLoading ? <MultipleLine /> : <CampaignDetail dangerouslySetInnerHTML={{ __html: props.data.detail}} />
+            }
+            <TermTitle>เงื่อนไขการเข้าร่วมมาตรการ</TermTitle>
+            {
+              isLoading ? <BulletList /> : <TermDetail dangerouslySetInnerHTML={{ __html: props.data.condition}} />
+            }
+          </Col>
+        </Row>
+      </Container>
+    </InformationContainer>
+  )
+}
 
 export default Information

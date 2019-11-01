@@ -1,6 +1,5 @@
 import React from 'react'
 
-import styled from 'styled-components'
 import ContentLoader from "react-content-loader"
 
 export const Line = () => (
