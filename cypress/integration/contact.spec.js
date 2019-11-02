@@ -1,10 +1,12 @@
 describe('Contact Test', function() {
+  before(function() {
+    const url = Cypress.config('url')
+    cy.visit(url)
+  })
   it('Contact should has 3 contacts', function() {
-    cy.visit('http://localhost:8000/')
     cy.get('[data-cy=contact-list]').children().should('have.length', 3)
   })
   it('Contact image should has correct telephone number link and has image', function() {
-    cy.visit('http://localhost:8000/')
     cy.get('[data-cy=contact-list] > :nth-child(1)').find('img').should('have.attr', 'alt', 'กรุงไทย')
     cy.get('[data-cy=contact-list] > :nth-child(1) > a').should('have.attr', 'href', 'tel:021111144')
     cy.get('[data-cy=contact-list] > :nth-child(2)').find('img').should('have.attr', 'alt', 'กรมบัญชีกลาง')

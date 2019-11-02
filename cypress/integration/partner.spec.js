@@ -1,10 +1,12 @@
 describe('Partner Test', function() {
+  before(function() {
+    const url = Cypress.config('url')
+    cy.visit(url)
+  })
   it('Partner should has 6 partners', function() {
-    cy.visit('http://localhost:8000/')
     cy.get('[data-cy=partner-list]').children().should('have.length', 6)
   })
   it('Partner image should has correct image alt and link', function() {
-    cy.visit('http://localhost:8000/')
     cy.get('[data-cy=partner-list] > :nth-child(1)').find('img').should('have.attr', 'alt', 'กระทรวงการคลัง')
     cy.get('[data-cy=partner-list] > :nth-child(1) > a').should('have.attr', 'href', 'https://www.mof.go.th/th/home')
     cy.get('[data-cy=partner-list] > :nth-child(2)').find('img').should('have.attr', 'alt', 'สำนักงานเศรษฐกิจ กระทรวงการคลัง')

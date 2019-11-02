@@ -1,10 +1,12 @@
 describe('Navbar Test', function() {
+  before(function() {
+    const url = Cypress.config('url')
+    cy.visit(url)
+  })
   it('Navbar should has 3 menus', function() {
-    cy.visit('http://localhost:8000/')
     cy.get('[data-cy=menu]').children().should('have.length', 3)
   })
   it('Each menu should has correct label and link', function() {
-    cy.visit('http://localhost:8000/')
     cy.get('[data-cy=menu] > :nth-child(1)').should('contain', 'ลงทะเบียนเข้าร่วมมาตรการ')
     cy.get('[data-cy=menu] > :nth-child(1)').should('have.attr', 'href', 'https://regist.ชิมช้อปใช้.com/Register/')
 
