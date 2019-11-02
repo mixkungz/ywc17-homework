@@ -2,6 +2,7 @@ describe('Contact Test', function() {
   before(function() {
     const url = Cypress.config('url')
     cy.visit(url)
+    cy.scrollTo(0, 500)
   })
   it('Contact should has 3 contacts', function() {
     cy.get('[data-cy=contact-list]').children().should('have.length', 3)

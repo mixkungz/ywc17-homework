@@ -2,6 +2,7 @@ describe('Footer Test', function() {
   before(function() {
     const url = Cypress.config('url')
     cy.visit(url)
+    cy.scrollTo(0, 500)
   })
   it('Registration personal group information should has telephone link to ktb callcenter', function() {
     cy.get(`[data-cy=footer] [data-cy=ktb-phonenumber]`).should('have.attr', 'href', 'tel:021111144')

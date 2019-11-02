@@ -2,6 +2,7 @@ describe('Partner Test', function() {
   before(function() {
     const url = Cypress.config('url')
     cy.visit(url)
+    cy.scrollTo(0, 500)
   })
   it('Partner should has 6 partners', function() {
     cy.get('[data-cy=partner-list]').children().should('have.length', 6)
