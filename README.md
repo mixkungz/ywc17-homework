@@ -5,6 +5,8 @@
   ชิม-ช้อป-ใช้
 </h1>
 
+DEMO: https://mixkungz.github.io/ywc17-homework/
+
 ## 🔥 Quick start
 
 1.  **Install dependencies.**
