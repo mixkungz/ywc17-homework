@@ -5,6 +5,8 @@
   ชิม-ช้อป-ใช้
 </h1>
 
+This's homework from young webmaster camp used for interview
+
 DEMO: https://mixkungz.github.io/ywc17-homework/
 
 ## 🔥 Quick start
